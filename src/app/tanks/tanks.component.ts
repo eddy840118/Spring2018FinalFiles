@@ -24,7 +24,9 @@ export class TanksComponent implements OnInit {
   }
 
   getTanks() {
-    
+    this.tankService.getTanks().then((resp) => {
+      this.tanks = resp;
+     });  
   }
 
   goToCreate() {
@@ -32,7 +34,13 @@ export class TanksComponent implements OnInit {
   }
 
   deleteTank(id: string) {
-    
+    this.tankService.deleteTank(id).then((resp) => {
+      if(resp) {
+        this.tanks = this.tanks.filter((tank) => {
+          return tank['id'] != id;
+        });
+      }
+    });    
   }
 
 }

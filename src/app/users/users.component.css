@@ -1,0 +1,32 @@
+.users-container {
+  display:grid;
+  grid-gap: 2em;
+  margin: 30px auto;
+  background-color: #ececec;
+
+}
+
+.user-card-container {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-gap:2em 2em;
+  padding: 2em;
+}
+
+.user-card {
+  position: relative;
+  height: 215px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  color: #84878a;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
