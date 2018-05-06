@@ -34,6 +34,12 @@ import { UserService } from './users/user.service';
 import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 import { UserCreateComponent } from './users/user-create/user-create.component';
+
+// games
+import { GameService } from './games/game.service';
+import { GameComponent } from './games/game/game.component';
+import { GamesComponent } from './games/games.component';
+import { GameCreateComponent } from './games/game-create/game-create.component';
 // Routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,6 +57,10 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'user/:id', component: UserComponent },
   { path: 'user-create', component: UserCreateComponent },
+  // games
+  { path: 'games', component: GamesComponent },
+  { path: 'game/:id', component: GameComponent },
+  { path: 'game-create', component: GameCreateComponent },
 ];
 
 @NgModule({
@@ -72,7 +82,11 @@ const appRoutes: Routes = [
     // users
     UsersComponent,
     UserCreateComponent,
-    UserComponent
+    UserComponent,
+    // games
+    GamesComponent,
+    GameCreateComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +99,8 @@ const appRoutes: Routes = [
   providers: [
     BookService,
     TankService,
-    UserService
+    UserService,
+    GameService
   ],
   bootstrap: [AppComponent]
 })

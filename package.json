@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -33,7 +33,12 @@
     "ngx-bootstrap": "^2.0.3",
     "rxjs": "^5.5.6",
     "text-mask-addons": "^3.7.2",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongoose": "^5.0.12"
   },
   "devDependencies": {
     "@angular/cli": "1.6.6",

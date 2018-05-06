@@ -10,13 +10,15 @@ export class DocsComponent implements OnInit {
   showBookDocs: boolean;
   showTankDocs: boolean;
   showUserDocs: boolean;
+  showGameDocs: boolean;
   constructor() { }
 
   ngOnInit() {
     this.docs = {
       books: [],
       tanks: [],
-      users: []
+      users: [],
+      games: []
     }
     this.toggle('toggleBooks');
 
@@ -399,21 +401,32 @@ export class DocsComponent implements OnInit {
         this.showBookDocs = true;
         this.showTankDocs = false;
         this.showUserDocs = false;
+        this.showGameDocs = false;
         break;
       case 'toggleTanks':
         this.showTankDocs = true;
         this.showBookDocs = false;
         this.showUserDocs = false;
+        this.showGameDocs = false;
         break;
       case 'toggleUsers':
         this.showUserDocs = true;
         this.showBookDocs = false;
         this.showTankDocs = false;
+        this.showGameDocs = false;
+        break;
+      case 'toggleGames':
+        this.showGameDocs = true;
+        this.showUserDocs = false;
+        this.showBookDocs = false;
+        this.showTankDocs = false;
+
         break;
       default:
-        this.showBookDocs = true;
+        this.showBookDocs = false;
         this.showTankDocs = false;
         this.showUserDocs = false;
+        this.showGameDocs = true;
         break;
     }
   }

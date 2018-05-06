@@ -1,0 +1,39 @@
+<div class="grid-container">
+  <mat-card *ngIf="game" class="input-container">
+    <mat-toolbar color="primary" class="create-toolbar">
+      <mat-toolbar-row>
+        <span class="copyright">Create a Game</span>
+        <div class="button-row">
+          <button [routerLink]="['/games']" mat-raised-button color="accent" class="pull-right">
+            Back to Game List
+            <mat-icon class="example-icon">arrow_back</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-card-content>
+      <div class="container">
+        <img *ngIf="game.image_url" mat-card-image [src]="game.image_url" alt="game">
+        <mat-form-field class="input">
+          <input [(ngModel)]="game.title" matInput placeholder="Title" required>
+        </mat-form-field>
+
+        <mat-form-field class="input">
+          <input [(ngModel)]="game.genre" matInput placeholder="Genre" required>
+        </mat-form-field>
+
+        <mat-form-field class="input">
+          <input [(ngModel)]="game.author" matInput placeholder="Author" required>
+        </mat-form-field>
+
+        <mat-form-field class="input">
+          <input [(ngModel)]="game.image_url" matInput placeholder="Cover Image URL" required>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="updateGame(game)" color="primary">Update Game</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

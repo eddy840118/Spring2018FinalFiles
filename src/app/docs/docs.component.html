@@ -89,4 +89,34 @@
       </mat-card-content>
     </mat-card>
   </mat-card>
+  <mat-card *ngIf="showGameDocs" class="docs-outer-container">
+    <docs-buttons (onButtonPressed)="toggle($event)"></docs-buttons>
+    <mat-card *ngFor="let game of docs.games" class="docs-container">
+      <mat-card-content>
+        <p>DESCRIPTION:
+          <span>{{game.description}}</span>
+        </p>
+        <hr>
+        <p>METHOD:
+          <span>{{game.method}}</span>
+        </p>
+        <hr>
+        <p>ENDPOINT:
+          <span>{{game.endpoint}}</span>
+        </p>
+        <hr>
+        <p>PARAMS:
+          <span>{{game.params}}</span>
+        </p>
+        <hr>
+        <p>REQUEST PAYLOAD:
+          <span>{{game.payload | json}}</span>
+        </p>
+        <hr>
+        <p>RESPONSE: </p>
+        <pre>{{game.response | json}}</pre>
+        <hr>
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
 </div>
